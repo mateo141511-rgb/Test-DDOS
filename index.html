@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VST Bank | Кредити, картки, іпотека онлайн</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fc;
+      color: #0a1c2f;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      background: #0a2540;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+    .logo i {
+      margin-right: 6px;
+      color: #6ab0f5;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #eef4ff;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #6ab0f5;
+    }
+    .online-btn {
+      background: #ffb347;
+      color: #0a2540 !important;
+      padding: 8px 20px;
+      border-radius: 32px;
+      font-weight: 700;
+    }
+    .online-btn:hover {
+      background: #ffa01e;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f2f4f 0%, #1b4a6e 100%);
+      color: white;
+      padding: 64px 0 70px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #ffb347;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 44px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #0a2540;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: #ffa01e;
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 14px 28px;
+      border-radius: 44px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Login card */
+    .login-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 20px 32px -12px rgba(0,0,0,0.2);
+    }
+    .login-card h3 {
+      color: #0a2540;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #dce5f0;
+      border-radius: 60px;
+      font-size: 15px;
+    }
+    .input-group input:focus {
+      outline: none;
+      border-color: #ffb347;
+    }
+    .btn-login {
+      width: 100%;
+      background: #0a2540;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 60px;
+      font-weight: 700;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    /* Rates + products */
+    .rates {
+      background: white;
+      padding: 32px 0;
+      border-bottom: 1px solid #e5edf5;
+    }
+    .rates-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .rate-item {
+      text-align: center;
+      background: #f8fafd;
+      padding: 12px 24px;
+      border-radius: 44px;
+      min-width: 130px;
+    }
+    .currency {
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .value {
+      font-weight: 700;
+      color: #0f2f4f;
+    }
+
+    .products {
+      padding: 70px 0;
+      background: #f4f7fc;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-size: 34px;
+      font-weight: 800;
+      color: #0a2540;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 30px;
+    }
+    .bank-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      transition: all 0.25s;
+      border: 1px solid #eef2f8;
+    }
+    .bank-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(0,0,0,0.1);
+    }
+    .card-icon {
+      background: #eef4ff;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      font-size: 28px;
+      color: #0f2f4f;
+      margin-bottom: 24px;
+    }
+    .bank-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .bank-card p {
+      color: #4a627a;
+      margin-bottom: 24px;
+    }
+    .card-link {
+      font-weight: 700;
+      color: #ffb347;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0a2540;
+      color: #bcd0e8;
+      padding: 50px 0 30px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col a {
+      display: block;
+      color: #bcd0e8;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 13px;
+      border-top: 1px solid #1f4565;
+      padding-top: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-title {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo"><i class="fas fa-university"></i> VST bank</div>
+      <div class="nav-links">
+        <a href="#">Приватним</a>
+        <a href="#">Бізнесу</a>
+        <a href="#">МСБ</a>
+        <a href="#">Інвестування</a>
+        <a href="#">Підтримка</a>
+        <a href="#" class="online-btn">Онлайн-банкінг</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="hero-title">Іпотека 4,99% на нове житло</h1>
+        <p class="hero-desc">Перший внесок від 10% • Рішення за 1 годину • Державна програма єОселя</p>
+        <div class="hero-buttons">
+          <button class="btn-primary">Оформити заявку</button>
+          <button class="btn-outline-light">Калькулятор кредиту</button>
+        </div>
+      </div>
+      <div>
+        <div class="login-card">
+          <h3>Вхід у VST Online</h3>
+          <div class="input-group">
+            <input type="text" placeholder="Логін / ІПН" id="loginId">
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Пароль" id="loginPass">
+          </div>
+          <button class="btn-login" id="fakeLoginBtn">Увійти</button>
+          <div style="margin-top: 16px; text-align: center; font-size: 13px;">
+            <a href="#" style="color:#0a2540; text-decoration: none;">Забули пароль? </a> | 
+            <a href="#" style="color:#0a2540; text-decoration: none;">Зареєструватись</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Курси валют -->
+  <section class="rates">
+    <div class="container rates-flex">
+      <div class="rate-item"><span class="currency">USD/UAH</span><br><span class="value">41.20 / 41.85</span></div>
+      <div class="rate-item"><span class="currency">EUR/UAH</span><br><span class="value">44.65 / 45.50</span></div>
+      <div class="rate-item"><span class="currency">PLN/UAH</span><br><span class="value">10.05 / 10.55</span></div>
+      <div class="rate-item"><span class="currency">GBP/UAH</span><br><span class="value">53.10 / 54.20</span></div>
+      <div class="rate-item"><span class="currency">Курс НБУ</span><br><span class="value">41.00</span></div>
+    </div>
+  </section>
+
+  <!-- Продукти банку -->
+  <section class="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Фінансові рішення для кожного</h2>
+        <p style="color:#47647c;">Понад 500 000 клієнтів обирають VST Bank</p>
+      </div>
+      <div class="cards-grid">
+        <div class="bank-card">
+          <div class="card-icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Цифрова картка</h3>
+          <p>Миттєве відкриття, безкоштовне обслуговування, кешбек до 5% та Apple Pay.</p>
+          <a href="#" class="card-link">Замовити →</a>
+        </div>
+        <div class="bank-card">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Кредит готівкою</h3>
+          <p>до 500 000 грн • ставка від 0,01% перші 3 місяці • без довідок</p>
+          <a href="#" class="card-link">Розрахувати →</a>
+        </div>
+        <div class="bank-card">
+          <div class="card-icon"><i class="fas fa-home"></i></div>
+          <h3>Іпотека "Власний дім"</h3>
+          <p>4,99% річних, строк до 30 років, схвалення за 40 хвилин</p>
+          <a href="#" class="card-link">Детальніше →</a>
+        </div>
+        <div class="bank-card">
+          <div class="card-icon"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Депозит "Максимум+"</h3>
+          <p>16,5% річних, поповнення та капіталізація, страхування вкладів</p>
+          <a href="#" class="card-link">Відкрити вклад →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Додатковий блок переваг -->
+  <section style="background: white; padding: 50px 0;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+        <div><i class="fas fa-shield-alt" style="font-size: 32px; color:#0f2f4f;"></i><br><strong>Захист коштів</strong><br>Гарантія ФГВФО</div>
+        <div><i class="fas fa-mobile-alt" style="font-size: 32px; color:#0f2f4f;"></i><br><strong>Застосунок 24/7</strong><br>Зручний мобільний банк</div>
+        <div><i class="fas fa-globe" style="font-size: 32px; color:#0f2f4f;"></i><br><strong>Міжнародні перекази</strong><br>SWIFT, SEPA, PayPal</div>
+        <div><i class="fas fa-headset" style="font-size: 32px; color:#0f2f4f;"></i><br><strong>Підтримка 0 800 33 22 33</strong><br>Цілодобово</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 style="color:white;">VST Bank</h4>
+        <a href="#">Про банк</a>
+        <a href="#">Вакансії</a>
+        <a href="#">Новини</a>
+      </div>
+      <div class="footer-col">
+        <h4 style="color:white;">Клієнтам</h4>
+        <a href="#">Тарифи</a>
+        <a href="#">Питання та відповіді</a>
+        <a href="#">Договори</a>
+      </div>
+      <div class="footer-col">
+        <h4 style="color:white;">Контакти</h4>
+        <a href="#">vstbank@contact.ua</a>
+        <a href="#">0 800 33 22 33</a>
+        <a href="#">м. Київ, вул. Фінансова, 1</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 АТ «VST БАНК» | Ліцензія НБУ №123 | Учасник Фонду гарантування вкладів фізичних осіб
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('fakeLoginBtn').addEventListener('click', function() {
+    let login = document.getElementById('loginId').value;
+    let pass = document.getElementById('loginPass').value;
+    if(login && pass) {
+      alert(`Вітаємо, ${login}! Це демонстраційна копія сайту VST Bank. Жодні дані не передаються.`);
+    } else {
+      alert('Будь ласка, введіть логін та пароль (демо-режим)');
+    }
+  });
+</script>
+</body>
+</html>
